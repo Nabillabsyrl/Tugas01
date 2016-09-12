@@ -28,9 +28,35 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        etNama = (EditText) findViewById(R.id.editTextNama);
+        etSewa = (EditText) findViewById(R.id.editTextSewa);
+        etFasT = (EditText) findViewById(R.id.editTextFT);
+        rbS = (RadioButton) findViewById(R.id.radioButton1);
+        rbD = (RadioButton) findViewById(R.id.radioButton2);
+        rbSS = (RadioButton) findViewById(R.id.radioButton3);
+        cbI = (CheckBox) findViewById(R.id.checkBox1);
+        cbTV = (CheckBox) findViewById(R.id.checkBox1);
+        cbAC = (CheckBox) findViewById(R.id.checkBox1);
+        spKode = (Spinner) findViewById(R.id.spinnerKode);
+        bOK = (Button) findViewById(R.id.buttonOK);
 
-    }
+        etSewa.setText("Rp.500.000");
+        tvHasil = (TextView) findViewById(R.id.textViewHasil);
 
-}
+
+
+        findViewById(R.id.buttonOK).setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View view)
+            {
+                doClick();
+            }
+
+        });}
+
+
+
+
 
 
