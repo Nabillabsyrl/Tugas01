@@ -1,10 +1,9 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="kode">
-        <item> 0010 </item>
-        <item> 0100 </item>
-        <item> 1000 </item>
+        <item> Superior </item>
+        <item> Deluxe </item>
+        <item> Standar </item>
     </string-array>
 
 </resources>

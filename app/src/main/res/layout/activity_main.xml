@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id = "@+id/scrollView">
+    android:id = "@+id/scrollView"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hotel ASWIN"
+        android:text="Hotel Millenium"
         android:id="@+id/textViewJudul"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
@@ -30,16 +31,15 @@
         android:backgroundTint="#f6dfdf"
         android:background="#facccc" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:id="@+id/imageView"
-        android:src="@drawable/new"
-        android:layout_below="@+id/textViewJudul"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        <ImageView
+            android:layout_width="314dp"
+            android:layout_height="96dp"
+            android:id="@+id/imageView"
+            android:src="@drawable/logo"
+            android:layout_weight="1.25"
+            android:layout_gravity="center_horizontal" />
 
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nama Lengkap"
@@ -72,16 +72,13 @@
         android:layout_height="wrap_content"
         android:entries="@array/kode"
         android:id="@+id/spinnerKode"
-        android:layout_below="@+id/textViewKode"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView"
         android:layout_marginRight="43dp"
         android:layout_marginEnd="43dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tipe Kamar "
+        android:text="Status"
         android:id="@+id/textView3"
         android:layout_below="@+id/spinnerKode"
         android:layout_alignParentLeft="true"
@@ -99,23 +96,17 @@
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Superior"
+                android:text="Menikah"
                 android:id="@+id/radioButton1"
                 android:checked="false" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Deluxe"
+                android:text="Belum Menikah"
                 android:id="@+id/radioButton2"
                 android:checked="false" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Standar"
-                android:id="@+id/radioButton3"
-                android:checked="false" />
         </RadioGroup>
 
         <TextView
@@ -162,18 +153,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/editTextSewa" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fasilitas Tambahan"
-            android:id="@+id/textViewFT"
-            android:textSize="16dp" />
-
-        <EditText
-            android:layout_width="131dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/editTextFT" />
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -181,7 +160,7 @@
             android:id="@+id/buttonOK" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
             tools:text="Hasil"
             android:id="@+id/textViewHasil" />

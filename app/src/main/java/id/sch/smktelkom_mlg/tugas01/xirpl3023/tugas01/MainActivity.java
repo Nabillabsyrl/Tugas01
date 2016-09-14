@@ -10,12 +10,11 @@ import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity
 {
-    EditText etNama, etSewa, etFasT;
-    RadioButton rbS, rbD, rbSS;
+    EditText etNama, etSewa;
+    RadioButton rbM, rbBM;
     TextView tvHasil;
     CheckBox cbI, cbTV, cbAC;
     Spinner spKode;
@@ -23,27 +22,22 @@ public class MainActivity extends AppCompatActivity
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         etNama = (EditText) findViewById(R.id.editTextNama);
         etSewa = (EditText) findViewById(R.id.editTextSewa);
-        etFasT = (EditText) findViewById(R.id.editTextFT);
-        rbS = (RadioButton) findViewById(R.id.radioButton1);
-        rbD = (RadioButton) findViewById(R.id.radioButton2);
-        rbSS = (RadioButton) findViewById(R.id.radioButton3);
+        rbM = (RadioButton) findViewById(R.id.radioButton1);
+        rbBM = (RadioButton) findViewById(R.id.radioButton2);
         cbI = (CheckBox) findViewById(R.id.checkBox1);
-        cbTV = (CheckBox) findViewById(R.id.checkBox1);
-        cbAC = (CheckBox) findViewById(R.id.checkBox1);
+        cbTV = (CheckBox) findViewById(R.id.checkBox2);
+        cbAC = (CheckBox) findViewById(R.id.checkBox3);
         spKode = (Spinner) findViewById(R.id.spinnerKode);
         bOK = (Button) findViewById(R.id.buttonOK);
 
-        etSewa.setText("Rp.500.000");
+
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
-
-
 
         findViewById(R.id.buttonOK).setOnClickListener(new View.OnClickListener()
         {
@@ -57,6 +51,49 @@ public class MainActivity extends AppCompatActivity
 
 
 
+    private void doClick() {
+            if (isValid()){
+            String nama = etNama.getText().toString();
+                String hasil = null;
+                if(rbM.isChecked())
+                {
+                    hasil = rbM.getText().toString();
+                }
+                else if(rbBM.isChecked())
+                {
+                    hasil = rbBM.getText().toString();
+                }
+
+                if(hasil == null)
+                {
+                    tvHasil.setText("Belum Memilih Status" +hasil);
+                }else {
+                }
+                String fas="Fasilitas Tambahan:\n";
+                int startlen = fas.length();
+                if(cbI.isChecked()) fas+=cbI.getText()+"\n";
+                if(cbTV.isChecked()) fas+=cbTV.getText()+"\n";
+                if(cbAC.isChecked()) fas+=cbAC.getText()+"\n";
+
+                if(fas.length()==startlen) fas+="Tidak ada pilihan";
+                tvHasil.setText("Fasilitas anda : "+fas);
+        }
+    }
+
+    private boolean isValid() {
+        String nama=etNama.getText().toString();
+        boolean valid = true;
+
+        if (nama.isEmpty()){
+            etNama.setError("Nama Belum Diisi");
+            valid = false;
+        }
+        else{
+            etNama.setError(null);
+        }
+        return valid;
+    }
+}
 
 
 
